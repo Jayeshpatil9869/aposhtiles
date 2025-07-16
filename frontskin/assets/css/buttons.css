@@ -1,0 +1,222 @@
+/** Added By DevShree 10-02-2023 **/
+  .progress-parent4{
+            position: fixed;
+            left: 18px;            
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            display: block;
+            z-index: 9998;
+            opacity: 1;
+            visibility: visible;  
+            top: 30%;        
+        }
+        .progress-parent1,.progress-parent2,.progress-parent3{
+            position: fixed;
+            right: 15px;            
+            height: 50px;
+            width: 50px;
+            cursor: pointer;
+            display: block;
+            z-index: 10000;
+            opacity: 1;
+            visibility: visible;          
+        }
+        .progress-parent1{
+             top: 30%;
+        }
+
+a.edu-btn,
+button.edu-btn {
+    text-align: center;
+    border-radius: 5px;
+    display: inline-block;
+    height: 60px;
+    line-height: 62px;
+    color: var(--edu-btn-color);
+    background: var(--color-primary);
+    padding: 0 30px;
+    font-size: 15px;
+    font-weight: 500;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+    font-family: var(--font-secondary);
+    border: 0 none;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+}
+
+@media only screen and (max-width: 767px) {
+    a.edu-btn,
+    button.edu-btn {
+        padding: 0 20px;
+        font-size: 14px;
+        height: 50px;
+        line-height: 52px;
+    }
+}
+
+a.edu-btn:after,
+  button.edu-btn:after {
+    content: "";
+    height: 100%;
+    width: 0;
+    background: -webkit-linear-gradient(right, #31b978 0%, #1ab69d 100%);
+    background: linear-gradient(-90deg, #31b978 0%, #1ab69d 100%);
+    border-radius: 5px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+}
+
+a.edu-btn i,
+  button.edu-btn i {
+    padding-left: 6px;
+    position: relative;
+    font-size: 11px;
+}
+
+@media only screen and (max-width: 767px) {
+    a.edu-btn i,
+      button.edu-btn i {
+        font-size: 9px;
+    }
+}
+
+a.edu-btn:hover:after,
+  button.edu-btn:hover:after {
+    left: 0;
+    width: 100%;
+}
+
+a.edu-btn.btn-large,
+  button.edu-btn.btn-large {
+    padding: 0 40px;
+}
+
+a.edu-btn.btn-large i,
+    button.edu-btn.btn-large i {
+    top: 0;
+    padding-left: 10px;
+}
+
+a.edu-btn.btn-medium,
+  button.edu-btn.btn-medium {
+    height: 50px;
+    line-height: 51px;
+    padding: 0 25px;
+}
+
+a.edu-btn.btn-small,
+  button.edu-btn.btn-small {
+    height: 40px;
+    line-height: 40px;
+    padding: 0 20px;
+    font-size: 14px;
+}
+
+a.edu-btn.left-icon i,
+  button.edu-btn.left-icon i {
+    padding-left: 0;
+    padding-right: 10px;
+}
+
+a.edu-btn.btn-curved,
+  button.edu-btn.btn-curved {
+    border-radius: 30px 5px;
+}
+
+a.edu-btn.btn-curved:hover,
+    button.edu-btn.btn-curved:hover {
+    border-radius: 5px 30px;
+}
+
+a.edu-btn.curved-medium,
+  button.edu-btn.curved-medium {
+    border-radius: 20px 5px;
+    padding: 0 40px;
+}
+
+a.edu-btn.curved-medium:hover,
+    button.edu-btn.curved-medium:hover {
+    border-radius: 5px 25px;
+}
+
+a.edu-btn.btn-secondary,
+  button.edu-btn.btn-secondary {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
+a.edu-btn.btn-secondary:hover,
+    button.edu-btn.btn-secondary:hover {
+    color: var(--color-white);
+    background: var(--color-primary);
+}
+
+a.edu-btn.btn-secondary1,
+  button.edu-btn.btn-secondary1 {
+    background: var(--color-secondary);
+    color: var(--color-white);
+}
+
+a.edu-btn.btn-secondary1:hover,
+    button.edu-btn.btn-secondary1:hover {
+    color: var(--color-heading);
+    background: var(--color-white);
+}
+
+a.edu-btn.btn-border,
+  button.edu-btn.btn-border {
+    background-color: transparent;
+    border: 1px solid var(--color-border);
+    color: var(--color-heading);
+    padding: 0 25px;
+}
+
+a.edu-btn.btn-border:after,
+    button.edu-btn.btn-border:after {
+    display: none;
+}
+
+a.edu-btn.btn-border:hover,
+    button.edu-btn.btn-border:hover {
+    background-color: var(--color-primary);
+    border-color: var(--color-primary);
+    color: var(--color-white);
+}
+
+.floating-button{
+    display: block;
+    position: fixed !important;
+    padding: 13px 30px;
+    z-index: 100000000 !important;
+    
+    background: #bc8247 !important;
+    color: #FFFFFF !important;
+    font-size: 16px;
+    transform: rotate(270deg);
+    top: 55%;
+    left: -48px;
+}
+.floating-button:hover{
+    text-decoration:none;
+}
+ @media(max-width: 992px){
+    .floating-button{
+        transform: rotate(0deg);
+        top: auto;
+        right: 0;
+        padding: 13px 40px;
+        bottom: 0;
+        text-align:center;
+        width: 100vw;
+        left:0;
+    }
+      
+}
