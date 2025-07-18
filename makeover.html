@@ -120,6 +120,26 @@ body
             right: 0;
         }
         
+                
+        /* Center logo in mobile view */
+        @media (max-width: 767px) {
+            .mobile-sidebar-header {
+                flex-direction: column;
+            }
+            
+            .mobile-sidebar-logo {
+                width: 100%;
+                text-align: center;
+                margin-bottom: 15px;
+            }
+            
+            .close-mobile-menu {
+                position: absolute;
+                top: 20px;
+                right: 20px;
+            }
+        }
+
         .mobile-sidebar-header {
             display: flex;
             align-items: center;
@@ -304,12 +324,6 @@ body
     <!-- Mobile Sidebar End -->
 
     <!-- scroll up area start -->
-
-        <div class="scroll-up" id="scroll" style="display: none;">
-
-            <a href="javascript:void(0);"><i class="fas fa-level-up-alt"></i></a>
-
-        </div>
 
         <!-- scroll up area end -->
 
