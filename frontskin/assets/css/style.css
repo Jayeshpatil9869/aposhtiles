@@ -4566,11 +4566,11 @@ p.checkout-coupon input[type=text] {
 
 @media (max-width: 767px) {
     .collection-item .row {
-        flex-direction: column-reverse;
+        flex-direction: column !important;
     }
     
     .collection-item .row:nth-child(even) {
-        flex-direction: column;
+        flex-direction: column !important;
     }
     
     .collection-info {
@@ -4580,6 +4580,37 @@ p.checkout-coupon input[type=text] {
     
     .collection-divider {
         margin: 15px auto;
+    }
+
+    /* Always show image first, then text in mobile view */
+    .collection-item .col-md-5,
+    .collection-item .col-md-7 {
+        width: 100%;
+    }
+    
+    /* Add margin below the image */
+    .collection-image {
+        margin-bottom: 20px;
+    }
+    
+    /* Force image first, content second for all collection items */
+    .collection-item .row {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .collection-item .row > [class*="col-"] {
+        display: flex;
+        flex-direction: column;
+    }
+    
+    /* Reorder columns for all collection items in mobile view */
+    .collection-item .col-md-7 {
+        order: 1 !important; /* Image always first */
+    }
+    
+    .collection-item .col-md-5 {
+        order: 2 !important; /* Content always second */
     }
 }
 
