@@ -18,6 +18,8 @@
         <!-- Place favicon.ico in the root directory -->
 
         <link rel="shortcut icon" type="image/x-icon" href="frontskin/assets/img/favicon.png">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
 
         
 
@@ -89,6 +91,131 @@ body
 
 }
 
+        /* Mobile Menu Styles */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
+            padding: 10px;
+        }
+        
+        .hamburger-menu span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background-color: #333;
+            margin: 5px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-sidebar {
+            position: fixed;
+            top: 0;
+            right: -300px;
+            width: 300px;
+            height: 100%;
+            background-color: #fff;
+            z-index: 9999;
+            transition: right 0.3s ease;
+            box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+            overflow-y: auto;
+        }
+        
+        .mobile-sidebar.active {
+            right: 0;
+        }
+        
+        .mobile-sidebar-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .mobile-sidebar-logo img {
+            max-height: 40px;
+        }
+        
+        .close-mobile-menu {
+            font-size: 24px;
+            cursor: pointer;
+            color: #333;
+        }
+        
+        .mobile-menu-items {
+            padding: 20px;
+        }
+        
+        .mobile-menu-items ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .mobile-menu-items ul li {
+            margin-bottom: 15px;
+        }
+        
+        .mobile-menu-items ul li a {
+            color: #333;
+            font-size: 16px;
+            text-transform: uppercase;
+            text-decoration: none;
+            font-weight: 500;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .mobile-menu-items ul li.has-dropdown {
+            position: relative;
+        }
+        
+        .mobile-menu-items ul li.has-dropdown > a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-menu-items ul li.has-dropdown > a:after {
+            content: '\f107';
+            font-family: 'Font Awesome 5 Pro';
+            margin-left: 5px;
+        }
+        
+        .mobile-menu-items ul li.has-dropdown .submenu {
+            display: none;
+            padding-left: 15px;
+            margin-top: 10px;
+        }
+        
+        .mobile-menu-items ul li.has-dropdown.active .submenu {
+            display: block;
+        }
+        
+        .mobile-menu-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 9998;
+            display: none;
+        }
+        
+        .mobile-menu-overlay.active {
+            display: block;
+        }
+        
+        @media (max-width: 767px) {
+            .hamburger-menu {
+                display: block;
+            }
+            
+            .mobile-menu-btn {
+                display: none !important;
+            }
+        }
         </style>
         
         <script type="text/javascript">
@@ -113,96 +240,94 @@ body
             }
         </script>
 <body>  
-    <header>
-
-            <div id="header-sticky" class="header__area grey-bg">
-
-                <div class="container">
-
-                    <div class="row align-items-center">
-
-                        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-4">
-
-                            <div class="logo">
-                                
-                                    <a href="index.html"><img src="frontskin/assets/img/logo/logo1.png" width="66" height="40" alt="logo"></a>
-                                
-
-							
-                            </div>
-
-                        </div>
-
-                        <div class="col-xl-9 col-lg-9 col-md-8 col-sm-8">
-
-                            <div class="header__right p-relative d-flex justify-content-between align-items-center">
-
-                                <div class="main-menu d-none d-lg-block">
-
-                                    <nav>
-
-                                        <ul>
-
-                                            <li><a href="index.html">Home</a></li>
-
-                                           
-										   <li class="mega-menu "><a href="products.html">Products</a></li>
-
-                                            <li><a href="about.html">Our Story</a></li>
-
-											<li><a href="makeover.html">The Makeover</a></li>
-
-											<li class="mega-menu"><a href="#">Gallery</a>
-
-                                                <ul class="submenu transition-3 gallerymenu">
-
-                                                    <li>
-
-                                                        <!-- <a href="https://www.kirtitile.com/images">Photos</a> -->
-
-                                                       <a href="https://www.instagram.com/kirti.magnetceramic" target="_blank">Photos</a>
-
-														<a href="https://youtube.com/channel/UCKulLQGoxMmc0RogG1Hnx_w" target="_blank">Videos</a>
-
-                                                    </li>
-
-                                                </ul>
-
-                                            </li>
-
-                                            <li><a href="blogs.html">Blogs</a></li>
-
-                                            <li><a href="contactus.html">Contact us</a></li>
-
-                                        </ul>
-
-                                    </nav>
-
-                                </div>
-
-                                <div class="mobile-menu-btn d-lg-none">
-
-                                    <a href="javascript:void(0);" class="mobile-menu-toggle"><i class="fas fa-bars"></i></a>
-
-                                </div>
-
-                                
-
-                            </div>
-
-                        </div>
-
-                    </div>
-
-                </div>
-
+  <header>
+  <div id="header-sticky" class="header__area grey-bg">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-12">
+          <!-- Header Top: Left = Icons | Right = Logo -->
+          <div class="d-flex  align-items-center py-3">
+            <!-- Left Side: Hamburger + Social Icons -->
+            <div class="d-flex align-items-center gap-3">
+              <!-- Hamburger -->
+              <div class="hamburger-menu d-lg-none me-3 mr-60">
+                <span></span>
+                <span></span>
+                <span></span>
+              </div>
             </div>
 
-        </header>
+            <!-- Right Side: Logo -->
+            <div class="logo pl-5">
+              <a href="index.html">
+                <img src="frontskin/assets/img/logo/logo1.png" width="66" height="40" alt="logo" />
+              </a>
+            </div>
+          </div>
 
-        <!-- header area end -->
+          <!-- Main menu (visible on large screens only) -->
+          <div class="main-menu d-none d-lg-block mt-2">
+            <nav>
+              <ul class="d-flex gap-3">
+                <li><a href="index.html">Home</a></li>
+                <li class="mega-menu"><a href="products.html">Products</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="makeover.html">The Makeover</a></li>
+                <li class="mega-menu has-dropdown">
+                  <a href="#">Gallery</a>
+                  <ul class="submenu transition-3 gallerymenu">
+                    <li>
+                      <a href="https://www.instagram.com/kirti.magnetceramic" target="_blank">Photos</a>
+                      <a href="https://youtube.com/channel/UCKulLQGoxMmc0RogG1Hnx_w" target="_blank">Videos</a>
+                    </li>
+                  </ul>
+                </li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contactus.html">Contact us</a></li>
+              </ul>
+            </nav>
+          </div>
 
-        
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+    <!-- header area end -->
+
+    <!-- Mobile Sidebar Start -->
+    <div class="mobile-sidebar">
+        <div class="mobile-sidebar-header">
+            <div class="mobile-sidebar-logo ">
+                <a href="index.html"><img src="frontskin/assets/img/logo/logo1.png" alt="APOSH"></a>
+            </div>
+            <div class="close-mobile-menu">
+  <i class="fas fa-times"></i>
+</div>
+
+        </div>
+        <div class="mobile-menu-items">
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="products.html">Products</a></li>
+                <li><a href="about.html">Our Story</a></li>
+                <li><a href="makeover.html">The Makeover</a></li>
+                <li class="has-dropdown">
+                    <a href="#">Gallery</a>
+                    <ul class="submenu">
+                        <li><a href="https://www.instagram.com/kirti.magnetceramic" target="_blank">Photos</a></li>
+                        <li><a href="https://youtube.com/channel/UCKulLQGoxMmc0RogG1Hnx_w" target="_blank">Videos</a></li>
+                    </ul>
+                </li>
+                <li><a href="blogs.html">Blogs</a></li>
+                <li><a href="contactus.html">Contact us</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="mobile-menu-overlay"></div>
+    <!-- Mobile Sidebar End -->
 
         <!-- scroll up area start -->
 
@@ -923,6 +1048,38 @@ body
     border: 1px solid #000 !important;
 }
 </style>
+    <script>
+        // Mobile Menu Functionality
+        $(document).ready(function() {
+            // Open mobile menu when hamburger is clicked
+            $('.hamburger-menu').on('click', function() {
+                $('.mobile-sidebar').addClass('active');
+                $('.mobile-menu-overlay').addClass('active');
+                $('body').css('overflow', 'hidden');
+            });
+            
+            // Close mobile menu when X is clicked
+            $('.close-mobile-menu').on('click', function() {
+                $('.mobile-sidebar').removeClass('active');
+                $('.mobile-menu-overlay').removeClass('active');
+                $('body').css('overflow', '');
+            });
+            
+            // Close mobile menu when overlay is clicked
+            $('.mobile-menu-overlay').on('click', function() {
+                $('.mobile-sidebar').removeClass('active');
+                $('.mobile-menu-overlay').removeClass('active');
+                $('body').css('overflow', '');
+            });
+            
+            // Toggle dropdown menus
+            $('.mobile-menu-items li.has-dropdown > a').on('click', function(e) {
+                e.preventDefault();
+                $(this).parent().toggleClass('active');
+                $(this).next('.submenu').slideToggle(300);
+            });
+        });
+    </script>
     </body>
 
 <script>'undefined'=== typeof _trfq || (window._trfq = []);'undefined'=== typeof _trfd && (window._trfd=[]),_trfd.push({'tccl.baseHost':'secureserver.net'},{'ap':'cpsh-oh'},{'server':'p3plzcpnl504898'},{'dcenter':'p3'},{'cp_id':'9980306'},{'cp_cl':'8'}) // Monitoring performance to make your website faster. If you want to opt-out, please contact web hosting support.</script><script src='../img1.wsimg.com/signals/js/clients/scc-c2/scc-c2.min.js'></script>
