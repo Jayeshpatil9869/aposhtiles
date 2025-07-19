@@ -4331,6 +4331,7 @@ p.checkout-coupon input[type=text] {
 .footer__contact ul li {
   margin-bottom: 5px;
   display: flex;
+  align-items: center;
 }
 .footer__contact ul li .icon i {
   line-height: 27px;
@@ -4415,6 +4416,72 @@ p.checkout-coupon input[type=text] {
 @media (max-width: 575px) {
   .footer__social {
     float: left;
+  }
+  
+  /* Center footer content in mobile view */
+  .footer__widget, 
+  .footer__widget-content, 
+  .footer__contact, 
+  .footer__links,
+  .footer__copyright,
+  .footer__social {
+    text-align: center;
+    float: none;
+  }
+  
+  .footer__contact ul li {
+    display: block;
+    justify-content: center;
+    text-align: center;
+  }
+  
+  .footer__contact ul li .icon,
+  .footer__contact ul li .text {
+    display: inline-block;
+    float: none;
+    text-align: center;
+  }
+  
+  .footer__social ul {
+    display: flex;
+    justify-content: center;
+  }
+  
+  .footer__social ul li {
+    margin: 0 20px;
+  }
+  
+  .footer__widget-title {
+    text-align: center;
+  }
+  
+  .footer__bottom .row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .footer__bottom .col-xl-6,
+  .footer__bottom .col-lg-5,
+  .footer__bottom .col-lg-7 {
+    width: 100%;
+    text-align: center;
+  }
+  
+  /* Fix icon rendering in mobile view */
+  .footer__contact ul li .icon i,
+  .footer__social ul li a i {
+    display: inline-block;
+    width: auto;
+    height: auto;
+    line-height: normal;
+    font-size: 16px;
+  }
+  
+  /* Fix address icon alignment */
+  .footer__contact ul li .icon {
+    vertical-align: top;
+    margin-top: 5px;
   }
 }
 .footer__social ul li {
@@ -4811,4 +4878,42 @@ p.checkout-coupon input[type=text] {
 .effect-pagination .slick-dots li.slick-active button {
     background-color: #333;
     transform: scale(1.2);
+}
+
+/* Fix for all Font Awesome icons */
+.icon i, 
+.fa, 
+.fas, 
+.far, 
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-brands {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: normal !important;
+  font-style: normal !important;
+}
+
+/* Fix for contact icons in footer */
+.footer__contact ul li .icon i {
+  font-size: 16px;
+  width: 20px !important;
+  text-align: center;
+  margin-right: 10px;
+}
+
+/* Fix for navigation menu icons */
+.main-menu ul li.has-dropdown > a::after,
+.mobile-menu-items ul li.has-dropdown > a::after {
+  display: inline-block !important;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  content: "\f107" !important;
+}
+
+/* Fix for gallery icon in navigation */
+.gallery-icon {
+  display: inline-block !important;
 }

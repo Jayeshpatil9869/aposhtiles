@@ -1,0 +1,54 @@
+/* Icon fixes for all pages */
+.icon i, 
+.fa, 
+.fas, 
+.far, 
+.fab,
+.fa-solid,
+.fa-regular,
+.fa-brands {
+  display: inline-block !important;
+  width: auto !important;
+  height: auto !important;
+  line-height: normal !important;
+  font-style: normal !important;
+}
+
+/* Fix for contact icons in footer */
+.footer__contact ul li .icon i {
+  font-size: 16px;
+  width: 20px !important;
+  text-align: center;
+  margin-right: 10px;
+}
+
+/* Fix for navigation menu icons */
+.main-menu ul li.has-dropdown > a::after,
+.mobile-menu-items ul li.has-dropdown > a::after {
+  display: inline-block !important;
+  font-family: "Font Awesome 6 Free" !important;
+  font-weight: 900 !important;
+  content: "\f107" !important;
+}
+
+/* Fix for gallery icon in navigation */
+.gallery-icon {
+  display: inline-block !important;
+}
+
+/* Fix for mobile view icons */
+@media (max-width: 575px) {
+  .footer__contact ul li .icon i,
+  .footer__social ul li a i {
+    display: inline-block !important;
+    width: auto !important;
+    height: auto !important;
+    line-height: normal !important;
+    font-size: 16px !important;
+  }
+  
+  .footer__contact ul li .icon {
+    vertical-align: top !important;
+    margin-top: 5px !important;
+  }
+} 

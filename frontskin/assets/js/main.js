@@ -693,3 +693,31 @@ $(document).ready(function() {
         showSlide(nextSlide);
     }, 5000);
 });
+
+// Add WhatsApp button to all pages
+$(document).ready(function() {
+    // Check if WhatsApp button already exists
+    if ($('.whatsapp-fixed-button').length === 0) {
+        // Create WhatsApp button
+        var whatsappButton = $('<a href="https://wa.link/lsft7e" class="whatsapp-fixed-button" target="_blank"><i class="fab fa-whatsapp"></i></a>');
+        
+        // Add button to body
+        $('body').append(whatsappButton);
+    }
+    
+    // Fix icon rendering in mobile view
+    if ($(window).width() <= 575) {
+        $('.footer__contact ul li .icon i, .footer__social ul li a i').css({
+            'display': 'inline-block',
+            'width': 'auto',
+            'height': 'auto',
+            'line-height': 'normal',
+            'font-size': '16px'
+        });
+        
+        $('.footer__contact ul li .icon').css({
+            'vertical-align': 'top',
+            'margin-top': '5px'
+        });
+    }
+});

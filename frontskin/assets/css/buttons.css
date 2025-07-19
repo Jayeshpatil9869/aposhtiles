@@ -228,3 +228,42 @@ a.edu-btn.btn-border:hover,
     }
       
 }
+
+/* WhatsApp fixed button */
+.whatsapp-fixed-button {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 60px;
+    height: 60px;
+    background-color: #25D366;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+    z-index: 999999;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-fixed-button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 14px rgba(0, 0, 0, 0.4);
+}
+
+.whatsapp-fixed-button i {
+    font-size: 30px;
+    color: #ffffff;
+}
+
+@media (max-width: 767px) {
+    .whatsapp-fixed-button {
+        width: 50px;
+        height: 50px;
+        bottom: 70px; /* Position above the Quick Enquiry button on mobile */
+    }
+    
+    .whatsapp-fixed-button i {
+        font-size: 26px;
+    }
+}
